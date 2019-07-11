@@ -1,0 +1,18 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+ENTITY d_tipi_flip_flop IS
+PORT ( d, clk, rst : IN std_logic;
+				 q : OUT std_logic);
+END d_tipi_flip_flop;
+
+ARCHITECTURE mimari1 OF d_tipi_flip_flop IS
+BEGIN
+
+	process (clk,rst)
+	BEGIN
+	if (rst='0') THEN q<='0';
+	elsif (clk='1' AND clk'EVENT) THEN q<=d;
+	end if;
+	end process;
+END mimari1;
